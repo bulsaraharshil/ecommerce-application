@@ -34,7 +34,7 @@ export default function Products({ items }) {
             <div className="card-details"> 
               {prod.name} <br/><br/> 
               Price: Rs.{prod.price}{" "} <br/><br/>
-              Stock: <span>{prod.inStock && "In Stock"}</span>  
+              Current Stock: <span>{prod.inStock && "In Stock"}</span>  
               {!prod.inStock && "Out of Stock"} <br/><br/>
               Delivery:
               <span>

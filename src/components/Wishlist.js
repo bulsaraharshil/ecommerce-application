@@ -1,10 +1,52 @@
 import * as React from "react";
 import { useCart } from "../cart-context";
+// import {useReducer} from "react";
+import { useWishList } from "../wishlist-context";
 
 export default function WishList({ items }) {
+
+  const { itemsInWishList } = useWishList();
+
+  // function reducerFunc(state, action) {
+  //   switch (action.TYPE) {
+  //     case "INCREMENT":
+  //       return {
+  //         ...state,
+  //         itemsInWishList: state.itemsInWishList.map((item) =>
+  //           item._id === action.payload._id
+  //             ? { ...item, quantity: item.quantity + 1 }
+  //             : item
+  //         )
+  //       };
+  //     case "DECREMENT":
+  //       return {
+  //         ...state,
+  //         itemsInWishList: state.itemsInWishList.map((item) =>
+  //           item._id === action.payload._id
+  //             ? { ...item, quantity: item.quantity - 1 }
+  //             : item
+  //         )
+  //       };
+  //     case "REMOVE":
+  //       return {
+  //         ...state,
+  //         itemsInWishList: state.itemsInWishList.filter(
+  //           (item) => item._id !== action.payload._id
+  //         )
+  //       };
+  //     default:
+  //       break;
+  //   }
+  //   return state;
+  // }
+
+  // const [state, dispatch] = useReducer(reducerFunc, { itemsInWishList });
   const { itemsInCart, setItemsInCart } = useCart();
 
-  return items.map((prod) => {
+  return(
+  <>
+
+{itemsInWishList.map((prod) => {
     return (
       <div
         style={{
@@ -31,7 +73,7 @@ export default function WishList({ items }) {
           <div className="card-details"> 
               {prod.name} <br/><br/> 
               Price: Rs.{prod.price}{" "} <br/><br/>
-              Stock: <span>{prod.inStock && "In Stock"}</span>  
+              Current Stock: <span>{prod.inStock && "In Stock"}</span>  
               {!prod.inStock && "Out of Stock"} <br/><br/>
               Delivery:
               <span>
@@ -43,6 +85,11 @@ export default function WishList({ items }) {
               </span> <br/><br/>
              
             {/* <p>Rating: {prod.ratings} stars</p> */}
+            {/* <button className="button button-secondary"
+                  onClick={() => dispatch({ TYPE: "REMOVE", payload: prod })}
+                >
+                  Remove from WishList
+            </button> */}
             {itemsInCart.filter((i) => i._id === prod._id).length > 0 ? (
               <button
                 className="button button-secondary"
@@ -63,6 +110,6 @@ export default function WishList({ items }) {
           </div>
         </div>
       </div>
-    );
-  });
-}
+   );
+  })};
+  </>)}
