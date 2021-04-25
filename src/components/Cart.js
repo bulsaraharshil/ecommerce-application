@@ -1,10 +1,10 @@
-import * as React from "react";
-// import {useReducer} from "react";
-import { useCart } from "../cart-context";
-import { useWishList } from "../wishlist-context";
+import * as React from "react"
+// import {useReducer} from "react"
+import { useCart } from "../cart-context"
+import { useWishList } from "../wishlist-context"
 
 export default function Cart({ items }) {
-  const { itemsInCart } = useCart();
+  const { itemsInCart } = useCart()
 
   // function reducerFunc(state, action) {
   //   switch (action.TYPE) {
@@ -16,7 +16,7 @@ export default function Cart({ items }) {
   //             ? { ...item, quantity: item.quantity + 1 }
   //             : item
   //         )
-  //       };
+  //       }
   //     case "DECREMENT":
   //       return {
   //         ...state,
@@ -25,23 +25,23 @@ export default function Cart({ items }) {
   //             ? { ...item, quantity: item.quantity - 1 }
   //             : item
   //         )
-  //       };
+  //       }
   //     case "REMOVE":
   //       return {
   //         ...state,
   //         itemsInCart: state.itemsInCart.filter(
   //           (item) => item._id !== action.payload._id
   //         )
-  //       };
+  //       }
   //     default:
-  //       break;
+  //       break
   //   }
-  //   return state;
+  //   return state
   // }
 
-  // const [state, dispatch] = useReducer(reducerFunc, { itemsInCart });
+  // const [state, dispatch] = useReducer(reducerFunc, { itemsInCart })
 
-  const { itemsInWishList, setItemsInWishList } = useWishList();
+  const { itemsInWishList, setItemsInWishList } = useWishList()
 
   return(
   <>
@@ -109,8 +109,8 @@ export default function Cart({ items }) {
           </div>
         </div>
       </div>
-    );
-  })};
+    )
+  })}
   </>)
   
 
@@ -183,8 +183,8 @@ export default function Cart({ items }) {
     //             )}
     //           </div>
     //         </>
-    //       );
+    //       )
     //     })}
     //   </>
-    // );
+    // )
 }

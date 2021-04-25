@@ -1,11 +1,11 @@
-import * as React from "react";
-import { useCart } from "../cart-context";
-// import {useReducer} from "react";
-import { useWishList } from "../wishlist-context";
+import * as React from "react"
+import { useCart } from "../cart-context"
+// import {useReducer} from "react"
+import { useWishList } from "../wishlist-context"
 
 export default function WishList({ items }) {
 
-  const { itemsInWishList } = useWishList();
+  const { itemsInWishList } = useWishList()
 
   // function reducerFunc(state, action) {
   //   switch (action.TYPE) {
@@ -17,7 +17,7 @@ export default function WishList({ items }) {
   //             ? { ...item, quantity: item.quantity + 1 }
   //             : item
   //         )
-  //       };
+  //       }
   //     case "DECREMENT":
   //       return {
   //         ...state,
@@ -26,22 +26,22 @@ export default function WishList({ items }) {
   //             ? { ...item, quantity: item.quantity - 1 }
   //             : item
   //         )
-  //       };
+  //       }
   //     case "REMOVE":
   //       return {
   //         ...state,
   //         itemsInWishList: state.itemsInWishList.filter(
   //           (item) => item._id !== action.payload._id
   //         )
-  //       };
+  //       }
   //     default:
-  //       break;
+  //       break
   //   }
-  //   return state;
+  //   return state
   // }
 
-  // const [state, dispatch] = useReducer(reducerFunc, { itemsInWishList });
-  const { itemsInCart, setItemsInCart } = useCart();
+  // const [state, dispatch] = useReducer(reducerFunc, { itemsInWishList })
+  const { itemsInCart, setItemsInCart } = useCart()
 
   return(
   <>
@@ -110,6 +110,6 @@ export default function WishList({ items }) {
           </div>
         </div>
       </div>
-   );
-  })};
+   )
+  })}
   </>)}
