@@ -73,7 +73,7 @@ export default function WishList({ items }) {
           <div className="card-details"> 
               {prod.name} <br/><br/> 
               Price: Rs.{prod.price}{" "} <br/><br/>
-              Current Stock: <span>{prod.inStock && "In Stock"}</span>  
+              Current Status: <span>{prod.inStock && "In Stock"}</span>  
               {!prod.inStock && "Out of Stock"} <br/><br/>
               Delivery:
               <span>
