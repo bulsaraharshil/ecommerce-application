@@ -1,5 +1,6 @@
 import React from "react";
 import { useCart } from "../cart-context";
+import { NavLink } from "react-router-dom";
 
 export default function CartHeader() {
   //using useContext
@@ -8,11 +9,19 @@ export default function CartHeader() {
   const { itemsInCart } = useCart();
 
   return (
-    <div class="badge-box">
-      <div class="badge-item">
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        <span class="num">{itemsInCart.length}</span>
+    <NavLink
+      to="/cart"
+      activeClassName="selected"
+      activeStyle={{
+        fontWeight: "bold"
+      }}
+    >
+      <div class="badge-box">
+        <div class="badge-item">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span class="num">{itemsInCart.length}</span>
+        </div>
       </div>
-    </div>
+    </NavLink>
   );
 }

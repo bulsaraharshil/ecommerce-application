@@ -155,30 +155,8 @@ export default function App() {
                   fontWeight: "bold"
                 }}
               >
-                Products
+                All Products
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/cart"
-                activeClassName="selected"
-                activeStyle={{
-                  fontWeight: "bold"
-                }}
-              >
-                Cart
-              </NavLink>{" "}
-            </li>
-            <li>
-              <NavLink
-                to="/wishlist"
-                activeClassName="selected"
-                activeStyle={{
-                  fontWeight: "bold"
-                }}
-              >
-                WishList
-              </NavLink>{" "}
             </li>
             <div className="cart-wishlist">
               <CartHeader />
