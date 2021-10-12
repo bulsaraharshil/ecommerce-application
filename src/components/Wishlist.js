@@ -96,7 +96,7 @@ export default function WishList({ items }) {
                 disabled
                 style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
               >
-                Added To Cart
+                Already In Cart
               </button>
             ) : (
               <button
