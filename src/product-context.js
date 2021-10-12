@@ -18,7 +18,7 @@ export function ProductProvider({ children }) {
       }
     })();
     //IIFE ends in above line
-  }, []);
+  }, [itemsInProduct]);
 
   return (
     <ProductContext.Provider value={{ itemsInProduct, setItemsInProduct }}>
